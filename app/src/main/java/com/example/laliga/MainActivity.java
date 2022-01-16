@@ -1,21 +1,20 @@
 package com.example.laliga;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.laliga.Adapter.TeamAdapter;
-import com.example.laliga.Model.ModelSports;
+import com.example.laliga.Model.ModelLaliga;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,13 +22,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static android.content.ContentValues.TAG;
-
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private TeamAdapter sportAdapter;
-    private ArrayList<ModelSports> sportsArrayList;
+    private ArrayList<ModelLaliga> sportsArrayList;
 
     private Button buttonFavorite;
     private ArrayList<Object> list;
@@ -77,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                                 String diskripsi = jsonObject.getString("strDescriptionEN");
                                 String image = jsonObject.getString("strTeamBadge");
 
-                                sportsArrayList.add(new ModelSports(image,nama, diskripsi));
+                                sportsArrayList.add(new ModelLaliga(image,nama, diskripsi));
                             }
 
                         } catch (JSONException e) {

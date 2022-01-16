@@ -14,6 +14,7 @@ public class RealmHelper {
     Realm realm;
 
     public RealmHelper(Realm realm) {
+
         this.realm = realm;
     }
 

@@ -70,7 +70,7 @@ public class DetailFavoritActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         if (v.equals(btnHapus)){
-            realmHelper.delete(id);
+            realmHelper.Delete(id);
             Toast.makeText(DetailFavoritActivity.this, "Delete Success", Toast.LENGTH_SHORT).show();
             finish();
         }

@@ -13,7 +13,7 @@ public class MyApplication extends Application {
 
         Realm.init(this);
         RealmConfiguration configuration = new RealmConfiguration.Builder()
-                .name("mahasiswa.db")
+                .name("LaLigaRealm.db")
                 .schemaVersion(0)
                 .build();
         Realm.setDefaultConfiguration(configuration);

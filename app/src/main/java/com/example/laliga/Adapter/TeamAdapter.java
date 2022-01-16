@@ -16,12 +16,12 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.SportViewHolder> {
+public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.SportViewHolder>{
 
     private ArrayList<ModelLaliga> listModelSport;
     private Callback callback;
 
-    public interface Callback{
+    public interface Callback {
         void onClick(int position);
     }
 
@@ -77,3 +77,4 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.SportViewHolde
         }
     }
 }
+

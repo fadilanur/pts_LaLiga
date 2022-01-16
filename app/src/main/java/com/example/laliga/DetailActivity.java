@@ -13,9 +13,8 @@ import com.example.laliga.Class.RealmHelper;
 import com.example.laliga.Model.DataModel;
 import com.squareup.picasso.Picasso;
 
-import java.security.AlgorithmParameterGenerator;
-
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,7 +31,6 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     private Realm realm;
     private RealmHelper realmHelper;
     private DataModel dataModel;
-    private AlgorithmParameterGenerator Realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +55,13 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 .load(image)
                 .into(imageView);
 
+
+        //Set up Realm
+        Realm.init(this);
+        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        realm = Realm.getInstance(configuration);
+
+        btnSimpan.setOnClickListener(this);
     }
 
     @Override
